@@ -214,8 +214,10 @@ app.post("/mps/compose", (req: Request, res: Response) => {
       fromName: req.session.user.name,
       to: "",
       date: new Date(),
-      body: req.body.body.message,
+      body: req.body.body,
     };
+
+    // console.log("BODY .... .... ... ", req.body.body)
 
     //store in outbox
     newMsgeToOutbox(msg, req.body.toNames, req.body.to)
