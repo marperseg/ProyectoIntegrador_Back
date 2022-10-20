@@ -59,7 +59,7 @@ const corsOptions: cors.CorsOptions = {
 
 app.use(cors(corsOptions));
 // app.options('*', cors(corsOptions))
-// app.use(morgan("combined"));
+app.use(morgan("combined"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(express.static(path.resolve("public")));
