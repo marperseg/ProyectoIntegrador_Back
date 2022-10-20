@@ -62,6 +62,8 @@ async function createUser(newUsr: NewUser): Promise<UserCreated> {
       nUnreadM: 0,
     });
 
+    User.sync();
+
     createInbox(newUsr.userId);
     createOutbox(newUsr.userId);
     // console.log(User.tableName);
